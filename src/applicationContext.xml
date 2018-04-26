@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  
+<bean id="studentbean" class="com.pTuts.StudentBean">  
+<property name="name" value="priyansh Nigam"></property>  
+</bean>  
+
+
+<!-- problem solved with di -->
+<bean id="address" class="com.pTuts.DependencyInjection.Address">  
+<constructor-arg value="line1" type="String"></constructor-arg>  
+<constructor-arg value="line2" type="String"></constructor-arg>  
+
+</bean>  
+
+
+<bean id="employee1" class="com.pTuts.DependencyInjection.Employee">  
+<constructor-arg value="25" type="String"></constructor-arg>  
+<constructor-arg value="priyansh" type="String"></constructor-arg>  
+<constructor-arg>  
+<ref bean="address"/>  
+</constructor-arg>   
+
+</bean>
+<bean id="employee2" class="com.pTuts.DependencyInjection.Employee">  
+<constructor-arg value="25" type="String"></constructor-arg>  
+<constructor-arg value="aparna" type="String"></constructor-arg>  
+<constructor-arg>  
+<ref bean="address"/>  
+</constructor-arg>   
+</bean>
+  
+
+  
+</beans>  
